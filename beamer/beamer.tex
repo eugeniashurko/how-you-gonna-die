@@ -2,14 +2,15 @@
 \usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
 \usepackage{lmodern}
-\usepackage[francais]{babel}
+\usepackage[english]{babel}
 \usepackage{hyperref}
+\usepackage{textcomp}
 
 \usetheme[miniframes]{Amsterdam}
 
 \usepackage[table]{xcolor}
  
-\title{How you're gonna die ?}
+\title{How You're Gonna Die ?}
 \author{Vincent Michielini, Etienne Moutot, Eugenia Oshurko}
 \date{25/04/2016}
 
@@ -33,7 +34,7 @@
 }
 
 \subsection{}
-\begin{frame}{Presentation of the dataset}
+\begin{frame}{Presentation of the Dataset}
   \begin{center}
   {\Large Death in the United States}
   \end{center}
@@ -61,7 +62,7 @@
   \end{itemize}
 \end{frame}
 
-\section{Guessing the cause of death}
+\section{Guessing the Cause of Death}
 {
      \begin{frame}<beamer>
      \frametitle{Outline}
@@ -70,7 +71,87 @@
 }
 \subsection{}
 \begin{frame}
+  Goal: guess the cause of death using learning algorithms
+\end{frame}
+
+\begin{frame}{Features Used}
+\begin{itemize}
+  \item Education (8 bins)
+  \item Sex
+  \item Race (White, Black, Other)
+  \item Martial status (Single, Married, ...)
+\end{itemize}
+
+\bigskip
+
+Learning performed on a random subset of \textbf{10000 people} with \textbf{Naive Bayes} algorithm.
+\end{frame}
+
+
+
+\begin{frame}{Cause of Death}
+  39 categories to guess with only 4 features: \textbf{not very good results}.
   
+  \bigskip
+  
+  Learning error about \textbf{0.18}.
+\end{frame}
+
+\begin{frame}{Manner of Death}
+  Now \textbf{7 categories}:
+  \begin{enumerate}
+    \item Accident
+    \item Suicide
+    \item Homicide
+    \item Pending investigation
+    \item Could not determine
+    \item Self-Inflicted
+    \item Natural
+  \end{enumerate}
+  
+  \bigskip
+  
+  Better results : error $\sim$ \textbf{0.78}
+\end{frame}
+
+\begin{frame}{Example 1}
+  \begin{itemize}
+    \item Black
+    \item Man
+    \item Single
+    \item Education: 8th grade or less
+  \end{itemize}
+  
+  Results from a naive Bayes:
+  \begin{description}
+    \item [\textbf{Accident}] 0.11
+    \item [\textbf{Suicide}] 0.21
+    \item [\textbf{Homicide}] 0.011
+    \item [\textbf{Pending}] 0.11
+    \item [\textbf{Undetermined}] 0.0030
+    \item [\textbf{Self-Inflicted}] 0.055
+    \item [\textbf{Natural}] 0.50
+  \end{description}
+\end{frame}
+
+\begin{frame}{Example 2}
+  \begin{itemize}
+    \item White
+    \item Woman
+    \item Married
+    \item Education: Master's degree or higher
+  \end{itemize}
+  
+  Results from a naive Bayes:
+  \begin{description}
+    \item [\textbf{Accident}] 0.18
+    \item [\textbf{Suicide}] 0.018
+    \item [\textbf{Homicide}] 0.0037
+    \item [\textbf{Pending}] 0.00041
+    \item [\textbf{Undetermined}] 0.00014
+    \item [\textbf{Self-Inflicted}] 0.00073
+    \item [\textbf{Natural}] 0.80
+  \end{description}
 \end{frame}
 
 \section{Descriptive statistics}
