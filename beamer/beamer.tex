@@ -9,33 +9,27 @@
 \usetheme[miniframes]{Amsterdam}
 
 \usepackage[table]{xcolor}
-
-
-
-\makeatletter
-\setbeamertemplate{footline}
-{
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}How You're Gonna Die ?
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}VM, EM, EO
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
-  \end{beamercolorbox}}%
-  \vskip0pt%
-}
-\makeatother
-
-
  
 \title{How You're Gonna Die ?}
 \author{Vincent Michielini, Etienne Moutot, Eugenia Oshurko}
 \date{25/04/2016}
+
+% here we declare our images
+\pgfdeclareimage[height=4cm]{age}{img/age_hist.pdf}
+\pgfdeclareimage[height=4cm]{sex}{img/sex_hist.pdf}
+\pgfdeclareimage[height=3.7cm]{marital}{img/marital_hist.pdf}
+\pgfdeclareimage[height=3.7cm]{race}{img/race_hist.pdf}
+\pgfdeclareimage[height=3.7cm]{education}{img/edu_hist.pdf}
+\pgfdeclareimage[height=5cm]{cause}{img/cause_hist.pdf}
+
+\pgfdeclareimage[height=5cm]{activity}{img/activity_day_of_week.pdf}
+\pgfdeclareimage[height=5cm]{norm_activity}{img/normalized_activity_day_of_week.pdf}
+
+\pgfdeclareimage[height=5cm]{month}{img/month_cause.pdf}
+\pgfdeclareimage[height=5cm]{norm_month}{img/normalized_month_cause.pdf}
+
+\pgfdeclareimage[height=5cm]{age_cause}{img/age_cause.pdf}
+\pgfdeclareimage[height=5cm]{norm_age_cause}{img/normalized_age_cause.pdf}
 
 \begin{document}
 
@@ -85,13 +79,120 @@
   \end{itemize}
 \end{frame}
 
+\section{Descriptive statistics}
+     \begin{frame}{}
+     \frametitle{Outline}
+     \tableofcontents[currentsection]
+     \end{frame}
+	
+\subsection{Feature Analysis}
+	\begin{frame}{Features Analysis}
+		\begin{itemize}
+			\item Most frequent age in the records corresponds to 85 - 89 years
+			\item Most frequent age in the records of infant death: 1 month - 11 months
+			\item Distribution of sexes in the dataset is uniform
+		\end{itemize}
+     	\pgfuseimage{age}
+     	\pgfuseimage{sex}
+     \end{frame}
+     
+     \begin{frame}{Features Analysis}
+     	\begin{itemize}
+			\item Most frequent education category corresponds to high school graduate or GED completed
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{education}
+		 	\pgfuseimage{race}
+		 	\pgfuseimage{marital}
+		 \end{center}
+     \end{frame}
+     
+      \begin{frame}{Features Analysis}
+      	Most frequent causes of death:
+     	\begin{itemize}
+			\item Ischemic heart diseases
+			\item Malignant neoplasms of trachea, bronchus and lung and other malignant neoplasms
+			\item Chronic lower respiratory diseases
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{cause}
+		 \end{center}
+     \end{frame}
+     
+     \begin{frame}{Some correlations: Activity/Day of Week}
+     	\begin{itemize}
+			\item Frequent activities: leasure activity and vital activity (eating, sleeping etc).
+			\item Low frequency of death while engaged with sport activities.
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{activity}
+		 \end{center}
+     \end{frame}
+     
+     \begin{frame}{Some correlations: Activity/Day of Week}
+     	\begin{itemize}
+			\item Weekend / death registered while engaged in leasure activity (specially Saturday).
+			\item Death during the sport activities on Friday and Saturday.
+			\item Death while engaged with other work on Tuesday (?).
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{norm_activity}
+		 \end{center}
+     \end{frame}
+     
+     
+     \begin{frame}{Some correlations: Month of Death/Cause of Death}
+     	\begin{itemize}
+			\item Most frequent causes of death are the brightest
+			\item Seems more or less uniform over the months
+			\item What if we normalize?
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{month}
+		 \end{center}
+     \end{frame}
+     
+     \begin{frame}{Some correlations: Month of Death/Cause of Death}
+     	\begin{itemize}
+			\item Strange frequency values for Syphilis, a lot of deaths from Syphilis in March.
+			\item Deaths from influenza and pneumonia in cold months.
+			\item Frequent deathes from Atherosclerosis and Alzheimer's disease in December.
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{norm_month}
+		 \end{center}
+     \end{frame}
+
+  	 \begin{frame}{Some correlations: Age/Cause of Death}
+     \begin{itemize}
+			\item For all the causes the frequencies seem to increase around older age. 
+			\item What if we normalize?
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{age_cause}
+		 \end{center}
+     \end{frame}
+  	
+  	\begin{frame}{Some correlations: Age/Cause of Death}
+     \begin{itemize}
+			\item Death from HIV:  frequent deaths in 35 - 59 years.
+			\item Alzheimer's disease: 85 - 94 years.
+			\item Pregnancy and childbirth: frequent around 30 - 34 years.
+			\item Motor vehicle accidents: very frequeny for 15 - 19 years.
+
+		\end{itemize}
+     	\begin{center}
+		 	\pgfuseimage{norm_age_cause}
+		 \end{center}
+     \end{frame}
+  	
+
 \section{Guessing the Cause of Death}
-{
      \begin{frame}<beamer>
      \frametitle{Outline}
      \tableofcontents[currentsection]
      \end{frame}
-}
+     
 \subsection{}
 \begin{frame}
   Goal: guess the cause of death using learning algorithms
@@ -145,7 +246,7 @@ Learning performed on a random subset of \textbf{10000 people} with \textbf{Naiv
     \item Education: 8th grade or less
   \end{itemize}
   
-  Results from Naive Bayes:
+  Results from a naive Bayes:
   \begin{description}
     \item [\textbf{Accident}] 0.11
     \item [\textbf{Suicide}] 0.21
@@ -165,7 +266,7 @@ Learning performed on a random subset of \textbf{10000 people} with \textbf{Naiv
     \item Education: Master's degree or higher
   \end{itemize}
   
-  Results from Naive Bayes:
+  Results from a naive Bayes:
   \begin{description}
     \item [\textbf{Accident}] 0.18
     \item [\textbf{Suicide}] 0.018
@@ -176,17 +277,7 @@ Learning performed on a random subset of \textbf{10000 people} with \textbf{Naiv
     \item [\textbf{Natural}] 0.80
   \end{description}
 \end{frame}
+	
 
-\section{Descriptive statistics}
-{
-     \begin{frame}<beamer>
-     \frametitle{Outline}
-     \tableofcontents[currentsection]
-     \end{frame}
-}
-\subsection{}
-\begin{frame}
-  
-\end{frame}
 
 \end{document}
