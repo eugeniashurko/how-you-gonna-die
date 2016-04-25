@@ -14,6 +14,29 @@
 \author{Vincent Michielini, Etienne Moutot, Eugenia Oshurko}
 \date{25/04/2016}
 
+
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}How You're Gonna Die ?
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}VM, EM, EO
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    %\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+
+
 % here we declare our images
 \pgfdeclareimage[height=4cm]{age}{img/age_hist.pdf}
 \pgfdeclareimage[height=4cm]{sex}{img/sex_hist.pdf}
@@ -143,7 +166,7 @@
      
      \begin{frame}{Some correlations: Month of Death/Cause of Death}
      	\begin{itemize}
-			\item Most frequent causes of death are the brightest
+			\item Most frequent causes of death are the darkest
 			\item Seems more or less uniform over the months
 			\item What if we normalize?
 		\end{itemize}
@@ -187,7 +210,7 @@
      \end{frame}
   	
 \section{Clustering}
-
+\subsection{}
 	\begin{frame}<beamer>
      \frametitle{Outline}
      \tableofcontents[currentsection]
@@ -205,7 +228,7 @@
      \tableofcontents[currentsection]
      \end{frame}
      
-\subsection{}
+\subsection{Learning from data}
 \begin{frame}
   Goal: guess the cause of death using learning algorithms
 \end{frame}
@@ -288,6 +311,14 @@ Learning performed on a random subset of \textbf{10000 people} with \textbf{Naiv
     \item [\textbf{Self-Inflicted}] 0.00073
     \item [\textbf{Natural}] 0.80
   \end{description}
+\end{frame}
+
+\section*{}
+\begin{frame}
+  \begin{center}
+  \LARGE 
+  Thank you !
+  \end{center}
 \end{frame}
 	
 
