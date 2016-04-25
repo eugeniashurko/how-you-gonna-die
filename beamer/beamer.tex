@@ -177,12 +177,12 @@
      
      \begin{frame}{Some correlations: Month of Death/Cause of Death}
      	\begin{itemize}
-		{\tiny
+     	{\tiny
 			\item Strange frequency values for Syphilis, a lot of deaths in March.
 			\item Strange frequency for deaths in pregnancy: a lot of deaths in January and July, but almost nothing in August.
 			\item Deaths from influenza and pneumonia in cold months.
 			\item Frequent deathes from Atherosclerosis and Alzheimer's disease in December.
-			\item More suicides in August and September.
+			\item More suicides in August and September, also more homicides in August.
 		}
 		\end{itemize}
      	\begin{center}
@@ -247,21 +247,9 @@
 
 \bigskip
 
-\textbf{Categorical features}: transformation into binary \textit{sub-features} to compute distances between categories.
-
-Example: \\
-{\small Race $\in \{0,1,2\} \longrightarrow $ IsWhite$\in \{0,1\}$, IsBlack$\in \{0,1\}$, IsOther$\in \{0,1\}$}
+Learning performed on a random subset of \textbf{10000 people} with \textbf{Naive Bayes} algorithm.
 \end{frame}
 
-
-\begin{frame}{Learning Models}
-  Learning performed on a random subset of \textbf{10000 people} with:
-  \begin{itemize}
-    \item \textbf{Naive Bayes}
-    \item K-nearest-neighbors: same results but slower
-    \item Support Vector Classification: bad results
-  \end{itemize}
-\end{frame}
 
 
 \begin{frame}{Cause of Death}
@@ -286,7 +274,7 @@ Example: \\
   
   \bigskip
   
-  Better results: error $\sim$ \textbf{0.78}
+  Better results : error $\sim$ \textbf{0.78}
 \end{frame}
 
 \begin{frame}{Example 1}
