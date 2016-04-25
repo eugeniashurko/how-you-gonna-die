@@ -212,19 +212,6 @@
 		 	\pgfuseimage{norm_age_cause}
 		 \end{center}
      \end{frame}
-  	
-\section{Clustering}
-	\begin{frame}<beamer>
-     \frametitle{Outline}
-     \tableofcontents[currentsection]
-    \end{frame}
-    
-  \subsection{}
-  	\begin{frame}{Biclustering}
-     \begin{itemize}
-		\item Did not give any interpretable results.
-	 \end{itemize}
-    \end{frame}
 
 \section{Guessing the Cause of Death}
      \begin{frame}<beamer>
@@ -242,14 +229,27 @@
   \item Education (8 bins)
   \item Sex
   \item Race (White, Black, Other)
-  \item Martial status (Single, Married, ...)
+  \item Marital status (Single, Married, ...)
 \end{itemize}
 
 \bigskip
 
-Learning performed on a random subset of \textbf{10000 people} with \textbf{Naive Bayes} algorithm.
+\textbf{Categorical features}: transformation into binary \textit{sub-features} to compute distances between categories.
 \end{frame}
 
+
+\begin{frame}{Learning Models}
+  Learning performed on a random subset of \textbf{10000 people} with:
+  \begin{itemize}
+    \item \textbf{Naive Bayes}
+    \item \textbf{K-nearest-neighbors}
+    \item Support Vector Classification (much slower)
+  \end{itemize}
+  
+  \bigskip
+  
+  All gave good scores.
+\end{frame}
 
 
 \begin{frame}{Cause of Death}
@@ -274,7 +274,7 @@ Learning performed on a random subset of \textbf{10000 people} with \textbf{Naiv
   
   \bigskip
   
-  Better results : error $\sim$ \textbf{0.78}
+  Better results : error $\sim$ \textbf{0.79}
 \end{frame}
 
 \begin{frame}{Example 1}
