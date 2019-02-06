@@ -1,5 +1,5 @@
 # how-you-gonna-die
-This project is a machine learning project to try to guess how you're gonna die. It is based on the kaggle dataset [Death in the United States (2014)](https://www.kaggle.com/cdc/mortality).
+This is a joke Machine Learning project that aims to build a predictive model that can guess how you're gonna die. It is based on the kaggle dataset [Death in the United States (2014)](https://www.kaggle.com/cdc/mortality).
 
 ## Install the project
 * Install [Anaconda (python 3)](https://www.continuum.io/downloads)
